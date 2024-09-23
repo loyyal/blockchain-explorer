@@ -35,7 +35,8 @@ const styles = theme => {
 	const dark = type === 'dark';
 	return {
 		background: {
-			backgroundColor: dark ? 'rgb(36, 32, 54)' : '#f0f5f9'
+			backgroundColor: dark ? 'rgb(36, 32, 54)' : '#FFFFFF'
+			// backgroundColor: dark ? 'rgb(36, 32, 54)' : '#f0f5f9'
 		},
 		view: {
 			paddingTop: 85,
@@ -67,7 +68,7 @@ const styles = theme => {
 			minWidth: 280,
 			marginBottom: 20,
 			paddingBottom: 20,
-			backgroundColor: dark ? '#453e68' : '#ffffff',
+			backgroundColor: dark ? '#453e68' : 'white',
 			boxShadow: dark ? '1px 2px 2px rgb(215, 247, 247)' : undefined
 		},
 		count: {
@@ -84,18 +85,21 @@ const styles = theme => {
 			textOverflow: 'ellipsis',
 			display: 'block',
 			float: 'left',
-			height: '100%',
-			width: '25%',
+			height: '90%',
+			width: '20%',
 			textAlign: 'center',
 			color: dark ? '#ffffff' : '#000000',
+
+			margin: '2vw',
+			borderRadius: '20px',
 			[theme.breakpoints.only('xs')]: {
-				fontSize: '8pt !important'
+				fontSize: '7pt !important'
 			},
 			[theme.breakpoints.down('md')]: {
-				fontSize: '12pt'
+				fontSize: '10pt'
 			},
 			[theme.breakpoints.up('md')]: {
-				fontSize: '18pt'
+				fontSize: '16pt'
 			}
 		},
 		vdivide: {
@@ -272,8 +276,11 @@ export class DashboardView extends Component {
 					</Row>
 					<Row>
 						<Col sm="12">
-							<Card className={classes.blocks}>
-								<div className={`${classes.statistic} ${classes.vdivide}`}>
+							<Card className={classes.blocks} elevation={0}>
+								<div
+									style={{ backgroundColor: '#DDEDF6' }}
+									className={`${classes.statistic} ${classes.vdivide}`}
+								>
 									<Row>
 										<Col sm="4">
 											<Avatar className={`${classes.avatar} ${classes.block}`}>
@@ -284,9 +291,12 @@ export class DashboardView extends Component {
 											<h1 className={classes.count}>{dashStats.latestBlock}</h1>
 										</Col>
 									</Row>
-									BLOCKS
+									Blocks
 								</div>
-								<div className={`${classes.statistic} ${classes.vdivide}`}>
+								<div
+									style={{ backgroundColor: '#F6E5E5' }}
+									className={`${classes.statistic} ${classes.vdivide}`}
+								>
 									<Row>
 										<Col sm="4">
 											<Avatar className={`${classes.avatar} ${classes.transaction}`}>
@@ -297,9 +307,12 @@ export class DashboardView extends Component {
 											<h1 className={classes.count}>{dashStats.txCount}</h1>
 										</Col>
 									</Row>
-									TRANSACTIONS
+									Transactions
 								</div>
-								<div className={`${classes.statistic} ${classes.vdivide}`}>
+								<div
+									style={{ backgroundColor: '#D9E9FF' }}
+									className={`${classes.statistic} ${classes.vdivide}`}
+								>
 									<Row>
 										<Col sm="4">
 											<Avatar className={`${classes.avatar} ${classes.node}`}>
@@ -310,9 +323,12 @@ export class DashboardView extends Component {
 											<h1 className={classes.count}>{dashStats.peerCount}</h1>
 										</Col>
 									</Row>
-									NODES
+									Nodes
 								</div>
-								<div className={classes.statistic}>
+								<div
+									style={{ backgroundColor: '#E2EFE3' }}
+									className={classes.statistic}
+								>
 									<Row>
 										<Col sm="4">
 											<Avatar className={`${classes.avatar} ${classes.chaincode}`}>
@@ -323,7 +339,7 @@ export class DashboardView extends Component {
 											<h1 className={classes.count}>{dashStats.chaincodeCount}</h1>
 										</Col>
 									</Row>
-									CHAINCODES
+									Chaincodes
 								</div>
 							</Card>
 						</Col>

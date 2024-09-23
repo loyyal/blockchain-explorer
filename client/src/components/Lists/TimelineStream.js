@@ -89,7 +89,7 @@ export class TimelineStream extends Component {
 								titleStyle={{ fontWeight: 'bold' }}
 								style={{ width: '65%' }}
 								cardHeaderStyle={{
-									backgroundColor: '#6283D0',
+									backgroundColor: '#000000',
 									fontSize: '13pt'
 								}}
 								contentStyle={{

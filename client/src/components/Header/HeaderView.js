@@ -30,6 +30,7 @@ import Loader from 'react-loader-spinner';
 import Select from '../Styled/Select';
 import NotificationsPanel from '../Panels/NotificationsPanel';
 import Logo from '../../static/images/Explorer_Logo.svg';
+import LoyyalLogo from '../../static/images/explorer_logo.png';
 import AdminPanel from '../Panels/AdminPanel';
 import { chartOperations, chartSelectors } from '../../state/redux/charts';
 import { tableOperations, tableSelectors } from '../../state/redux/tables';
@@ -94,38 +95,42 @@ const styles = theme => {
 	};
 	return {
 		logo: {
-			width: 260,
+			width: 190,
 			height: 50,
 			'@media (max-width: 1415px) and (min-width: 990px)': {
-				width: 200,
+				width: 150,
 				height: 40
 			}
 		},
 		navbarHeader: {
-			backgroundColor: '#e8e8e8',
+			backgroundColor: '#F2F5F880',
 			...darkNavbar
 		},
 		tab: {
 			color: dark ? '#242036' : '#000000',
-			fontSize: '1.05rem',
-			fontWeight: 800,
+			fontSize: '16px',
+			fontWeight: 600,
+			marginRight: '3vw',
+
 			height: 50,
 			margin: 10,
 			'&:hover': {
-				color: dark ? '#242036' : '#000000'
+				color: dark ? '#242036' : '#3464B3',
+				textDecoration: 'none'
 			},
 			'@media (max-width: 1415px) and (min-width: 990px)': {
 				fontSize: '0.85rem'
 			}
 		},
 		activeTab: {
-			color: '#ffffff',
-			backgroundColor: dark ? '#453e68' : '#58c5c2',
+			color: '#3464B3',
+			backgroundColor: dark ? '#453e68' : '#F2F5F880',
+			// backgroundColor: dark ? '#453e68' : '#58c5c2',
 			height: 60,
 			marginTop: 20,
 			padding: 10,
 			'&:hover': {
-				color: '#ffffff'
+				color: '#3464B3'
 			},
 			'@media (max-width: 1415px) and (min-width: 990px)': {
 				padding: '8%'
@@ -173,6 +178,7 @@ const styles = theme => {
 			width: 200,
 			margin: 8,
 			float: 'none',
+
 			'@media (max-width: 1415px) and (min-width: 990px)': {
 				width: '9em'
 			}
@@ -528,12 +534,12 @@ export class HeaderView extends Component {
 			dropdownOpen
 		} = this.state;
 		const links = [
-			{ to: '/', label: 'DASHBOARD', exact: true },
-			{ to: '/network', label: 'NETWORK' },
-			{ to: '/blocks', label: 'BLOCKS' },
-			{ to: '/transactions', label: 'TRANSACTIONS' },
-			{ to: '/chaincodes', label: 'CHAINCODES' },
-			{ to: '/channels', label: 'CHANNELS' }
+			{ to: '/', label: 'Dashboard', exact: true },
+			{ to: '/network', label: 'Network' },
+			{ to: '/blocks', label: 'Blocks' },
+			{ to: '/transactions', label: 'Transaction' },
+			{ to: '/chaincodes', label: 'Chaincodes' },
+			{ to: '/channels', label: 'Channels' }
 		];
 
 		return (
@@ -549,7 +555,7 @@ export class HeaderView extends Component {
 					<div>
 						<Navbar className={classes.navbarHeader} expand="lg" fixed="top">
 							<NavbarBrand href="/">
-								<img src={Logo} className={classes.logo} alt="Hyperledger Logo" />
+								<img src={LoyyalLogo} className={classes.logo} alt="Hyperledger Logo" />
 							</NavbarBrand>
 							<NavbarToggler onClick={this.toggle}>
 								<FontAwesome name="bars" className={classes.toggleIcon} />

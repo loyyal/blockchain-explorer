@@ -22,7 +22,7 @@ const styles = theme => {
 				overflow: 'scroll !important'
 			},
 			'& .rt-tr-group .rt-tr': {
-				paddingTop: 30
+				paddingTop: 13
 			},
 			'& .rt-td': {
 				textAlign: 'center'
@@ -72,6 +72,11 @@ const Table = props => {
 			className={clazz}
 			{...rest}
 			getPaginationProps={() => ({ className: classes.pagination })}
+			getTrGroupProps={() => ({
+				style: {
+					flex: 'none' // Remove the flex property
+				}
+			})}
 		/>
 	);
 };

@@ -14,8 +14,9 @@ const styles = theme => {
 	return {
 		select: {
 			'& .Select-control': {
-				backgroundColor: `${dark ? '#6a628e' : '#e8e8e8'} !important`,
-				color: dark ? '#ffffff !important' : undefined
+				backgroundColor: `${dark ? '#6a628e' : '#FFFFFF'} !important`,
+				color: dark ? '#ffffff !important' : undefined,
+				borderRadius: '20px'
 			},
 			'& .Select-control .Select-clear-zone': {
 				display: 'none',
