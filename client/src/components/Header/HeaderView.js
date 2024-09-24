@@ -103,7 +103,7 @@ const styles = theme => {
 			}
 		},
 		navbarHeader: {
-			backgroundColor: '#F2F5F880',
+			backgroundColor: 'rgb(242, 245, 248)',
 			...darkNavbar
 		},
 		tab: {
@@ -112,8 +112,9 @@ const styles = theme => {
 			fontWeight: 600,
 			marginRight: '3vw',
 
-			height: 50,
+			height: 60,
 			margin: 10,
+			// border:"1px solid",
 			'&:hover': {
 				color: dark ? '#242036' : '#3464B3',
 				textDecoration: 'none'
@@ -127,8 +128,9 @@ const styles = theme => {
 			backgroundColor: dark ? '#453e68' : '#F2F5F880',
 			// backgroundColor: dark ? '#453e68' : '#58c5c2',
 			height: 60,
-			marginTop: 20,
-			padding: 10,
+			marginTop: 10,
+			// padding: 10,
+			// border:"1px solid",
 			'&:hover': {
 				color: '#3464B3'
 			},

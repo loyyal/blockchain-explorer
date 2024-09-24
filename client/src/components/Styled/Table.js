@@ -74,7 +74,21 @@ const Table = props => {
 			getPaginationProps={() => ({ className: classes.pagination })}
 			getTrGroupProps={() => ({
 				style: {
-					flex: 'none' // Remove the flex property
+					flex: 'none'
+				}
+			})}
+			getTheadThProps={() => ({
+				style: {
+					fontWeight: 'bold',
+					fontSize: '16px',
+					color: 'black',
+					border: 'none',
+					padding: '10px'
+				}
+			})}
+			getTrProps={() => ({
+				style: {
+					padding: '20px 10px'
 				}
 			})}
 		/>

@@ -99,7 +99,14 @@ export class OrgPieChart extends Component {
 		return (
 			<div className={classes.container}>
 				<PieChart width={250} height={290} className={classes.chart}>
-					<Legend align="right" />
+					<Legend
+						layout="horizontal"
+						wrapperStyle={{
+							display: 'flex',
+							justifyContent: 'center'
+						}}
+						align="center"
+					/>
 					<Pie
 						data={data}
 						dataKey="value"

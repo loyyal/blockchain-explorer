@@ -58,7 +58,10 @@ export class BlockView extends Component {
 									onClick={this.handleClose}
 									className={modalClasses.closeBtn}
 								>
-									<FontAwesome name="close" />
+									<FontAwesome
+										style={{ color: 'white', marginTop: '7px' }}
+										name="close"
+									/>
 								</button>
 							</CardTitle>
 							<CardBody className={modalClasses.body}>

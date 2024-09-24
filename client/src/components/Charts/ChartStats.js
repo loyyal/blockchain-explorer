@@ -116,9 +116,22 @@ export class ChartStats extends Component {
 
 		return (
 			<div className={classes.chart}>
-				<Nav tabs>
-					<NavItem>
+				<Nav
+					style={{
+						backgroundColor: '#DEE2E6',
+						padding: '10px',
+						display: 'flex',
+						justifyContent: 'space-evenly'
+					}}
+					tabs
+				>
+					<NavItem style={{ cursor: 'pointer' }}>
 						<NavLink
+							style={
+								activeTab === '1'
+									? { backgroundColor: 'black', color: 'white', borderRadius: '10px' }
+									: { color: 'black', border: '1px solid black', borderRadius: '10px' }
+							}
 							className={classnames({
 								active: activeTab === '1'
 							})}
@@ -129,8 +142,13 @@ export class ChartStats extends Component {
 							BLOCKS / HOUR
 						</NavLink>
 					</NavItem>
-					<NavItem>
+					<NavItem style={{ cursor: 'pointer' }}>
 						<NavLink
+							style={
+								activeTab === '2'
+									? { backgroundColor: 'black', color: 'white', borderRadius: '10px' }
+									: { color: 'black', border: '1px solid black', borderRadius: '10px' }
+							}
 							className={classnames({
 								active: activeTab === '2'
 							})}
@@ -141,8 +159,13 @@ export class ChartStats extends Component {
 							BLOCKS / MIN
 						</NavLink>
 					</NavItem>
-					<NavItem>
+					<NavItem style={{ cursor: 'pointer' }}>
 						<NavLink
+							style={
+								activeTab === '3'
+									? { backgroundColor: 'black', color: 'white', borderRadius: '10px' }
+									: { color: 'black', border: '1px solid black', borderRadius: '10px' }
+							}
 							className={classnames({
 								active: activeTab === '3'
 							})}
@@ -153,8 +176,13 @@ export class ChartStats extends Component {
 							TX / HOUR
 						</NavLink>
 					</NavItem>
-					<NavItem>
+					<NavItem style={{ cursor: 'pointer' }}>
 						<NavLink
+							style={
+								activeTab === '4'
+									? { backgroundColor: 'black', color: 'white', borderRadius: '10px' }
+									: { color: 'black', border: '1px solid black', borderRadius: '10px' }
+							}
 							className={classnames({
 								active: activeTab === '4'
 							})}

@@ -1,11 +1,28 @@
 /**
  *    SPDX-License-Identifier: Apache-2.0
  */
-body {
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+/* body {
 	line-height: normal;
 	font-size: 16px;
 	font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased !important;
+} */
+body {
+	line-height: normal;
+	font-size: 16px;
+	font-family: 'Montserrat', 'Roboto Condensed', 'Helvetica Neue', Helvetica,
+		Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+h1,
+h2,
+h3,
+p {
+	font-family: 'Montserrat', sans-serif;
 }
 #root > div > div:nth-child(1) > nav > a {
 	font-size: 30pt;

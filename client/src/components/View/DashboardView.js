@@ -69,7 +69,9 @@ const styles = theme => {
 			marginBottom: 20,
 			paddingBottom: 20,
 			backgroundColor: dark ? '#453e68' : 'white',
-			boxShadow: dark ? '1px 2px 2px rgb(215, 247, 247)' : undefined
+			boxShadow: dark ? '1px 2px 2px rgb(215, 247, 247)' : undefined,
+			display: 'flex',
+			justifyContent: 'space-between'
 		},
 		count: {
 			color: dark ? '#ffffff' : undefined,
@@ -86,11 +88,11 @@ const styles = theme => {
 			display: 'block',
 			float: 'left',
 			height: '90%',
-			width: '20%',
+			width: '22%',
 			textAlign: 'center',
 			color: dark ? '#ffffff' : '#000000',
 
-			margin: '2vw',
+			margin: '2vw 0px 0px 0px',
 			borderRadius: '20px',
 			[theme.breakpoints.only('xs')]: {
 				fontSize: '7pt !important'
@@ -276,6 +278,7 @@ export class DashboardView extends Component {
 					</Row>
 					<Row>
 						<Col sm="12">
+							<div style={{ fontSize: '30px', fontWeight: 700 }}>Overview</div>
 							<Card className={classes.blocks} elevation={0}>
 								<div
 									style={{ backgroundColor: '#DDEDF6' }}
@@ -361,7 +364,9 @@ export class DashboardView extends Component {
 								<ChartStats />
 							</Card>
 							<Card className={`${classes.section} ${classes.center}`}>
-								<h5>Transactions by Organization</h5>
+								<div style={{ fontSize: '14px', marginTop: '10px', fontWeight: 600 }}>
+									Transactions by Organization
+								</div>
 								<hr />
 								<div className={classes.pie}>
 									<OrgPieChart transactionByOrg={transactionByOrg} />

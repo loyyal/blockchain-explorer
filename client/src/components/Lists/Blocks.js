@@ -112,7 +112,7 @@ const styles = theme => {
 			opacity: 0.8,
 			margin: 'auto',
 			width: '100% !important',
-			backgroundColor: dark ? undefined : '#086108',
+			backgroundColor: dark ? undefined : 'black',
 			'margin-bottom': '4px'
 		},
 		filterElement: {
@@ -689,7 +689,7 @@ export class Blocks extends Component {
 					<div className="col-md-1">
 						<Button
 							className={classes.filterButton}
-							color="primary"
+							// color="primary"
 							onClick={() => {
 								this.handleClearSearch();
 							}}
@@ -700,10 +700,10 @@ export class Blocks extends Component {
 					<div className="col-md-1">
 						<Button
 							className={classes.filterButton}
-							color="secondary"
+							// color="secondary"
 							onClick={() => this.setState({ filtered: [], sorted: [] })}
 						>
-							Clear Filter
+							Clear
 						</Button>
 					</div>
 				</div>
