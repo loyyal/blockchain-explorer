@@ -30,7 +30,7 @@ import Loader from 'react-loader-spinner';
 import Select from '../Styled/Select';
 import NotificationsPanel from '../Panels/NotificationsPanel';
 import Logo from '../../static/images/Explorer_Logo.svg';
-import LoyyalLogo from '../../static/images/explorer_logo.png';
+import LoyyalLogo from '../../static/images/explorer_logo1.svg';
 import AdminPanel from '../Panels/AdminPanel';
 import { chartOperations, chartSelectors } from '../../state/redux/charts';
 import { tableOperations, tableSelectors } from '../../state/redux/tables';
@@ -557,7 +557,7 @@ export class HeaderView extends Component {
 					<div>
 						<Navbar className={classes.navbarHeader} expand="lg" fixed="top">
 							<NavbarBrand href="/">
-								<img src={LoyyalLogo} className={classes.logo} alt="Hyperledger Logo" />
+								<img src={LoyyalLogo} className={classes.logo} alt="Loyyal Logo" />
 							</NavbarBrand>
 							<NavbarToggler onClick={this.toggle}>
 								<FontAwesome name="bars" className={classes.toggleIcon} />
