@@ -9,7 +9,7 @@ volumes:
 networks:
   mynetwork.com:
     name: fabric_test
-
+    external: true
 services:
 
   explorerdb.mynetwork.com:
@@ -27,11 +27,13 @@ services:
       retries: 5
     volumes:
       - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
     networks:
       - mynetwork.com
 
   explorer.mynetwork.com:
-    image: ghcr.io/hyperledger-labs/explorer:latest
+    image: hyperledger/explorer-custom 
     container_name: explorer.mynetwork.com
     hostname: explorer.mynetwork.com
     environment:

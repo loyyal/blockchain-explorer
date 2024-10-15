@@ -3,7 +3,7 @@
 #SPDX-License-Identifier: Apache-2.0
 
 FABRIC_EXPLORER_DB_TAG="hyperledger/explorer-db"
-FABRIC_EXPLORER_TAG="hyperledger/explorer"
+FABRIC_EXPLORER_TAG="hyperledger/explorer-custom"
 
 function banner(){
 	echo ""
@@ -25,7 +25,7 @@ function deploy_build_database(){
 
 function deploy_build_explorer(){
 	echo "Building Hyperledger Fabric explorer image..."
-	docker build --build-arg "http_proxy=${http_proxy}" --build-arg "https_proxy=${https_proxy}" --build-arg "no_proxy=${no_proxy}" --tag $FABRIC_EXPLORER_TAG .
+	docker build --build-arg "http_proxy=${http_proxy}" --build-arg "https_proxy=${https_proxy}" --build-arg "no_proxy=${no_proxy}" --tag hyperledger/explorer .
 }
 
 banner
@@ -48,16 +48,16 @@ while getopts "de" opt; do
     ;;
   esac
 done
+deploy_build_explorer
+# if [ $build_all -eq 1 ]; then
+# 	deploy_build_explorer
+# 	deploy_build_database
+# else
+# 	if [ $build_db -eq 1 ]; then
+# 		deploy_build_database
+# 	fi
 
-if [ $build_all -eq 1 ]; then
-	deploy_build_explorer
-	deploy_build_database
-else
-	if [ $build_db -eq 1 ]; then
-		deploy_build_database
-	fi
-
-	if [ $build_explorer -eq 1 ]; then
-		deploy_build_explorer
-	fi
-fi
+# 	if [ $build_explorer -eq 1 ]; then
+# 		deploy_build_explorer
+# 	fi
+# fi

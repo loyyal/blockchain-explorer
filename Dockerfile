@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-FROM node:13-alpine AS BUILD_IMAGE
+FROM node:16-alpine AS BUILD_IMAGE
 
 # default values pf environment variables
 # that are used inside container
@@ -30,7 +30,7 @@ RUN curl -sf https://gobinaries.com/tj/node-prune | sh
 RUN npm install && npm run build && npm prune --production
 
 # build explorer app
-RUN cd client && npm install && npm prune --production && yarn build
+RUN cd client && npm install && npm run build && npm prune --production
 
 # remove installed packages to free space
 RUN apk del npm-deps
@@ -58,6 +58,7 @@ ENV EXPLORER_APP_PATH $DEFAULT_WORKDIR/explorer
 WORKDIR $EXPLORER_APP_PATH
 
 COPY . .
+RUN ls -l
 COPY --from=BUILD_IMAGE $EXPLORER_APP_PATH/dist ./app/
 COPY --from=BUILD_IMAGE $EXPLORER_APP_PATH/client/build ./client/build/
 COPY --from=BUILD_IMAGE $EXPLORER_APP_PATH/node_modules ./node_modules/

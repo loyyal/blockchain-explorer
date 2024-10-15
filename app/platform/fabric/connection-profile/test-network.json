@@ -8,7 +8,7 @@
 			"id": "exploreradmin",
 			"password": "exploreradminpw"
 		},
-		"enableAuthentication": true,
+		"enableAuthentication": false,
 		"organization": "Org1MSP",
 		"connection": {
 			"timeout": {
@@ -39,20 +39,20 @@
 		"Org1MSP": {
 			"mspid": "Org1MSP",
 			"adminPrivateKey": {
-				"path": "/fabric-path/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/priv_sk"
+				"path": "/workspace/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/aba3773b93ab8e18ae695c07594c3c42557dc4a49692f9e5f0d2d5133785bd3c_sk"
 			},
 			"peers": ["peer0.org1.example.com"],
 			"signedCert": {
-				"path": "/fabric-path/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/User1@org1.example.com-cert.pem"
+				"path": "/workspace/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem"
 			}
 		}
 	},
 	"peers": {
 		"peer0.org1.example.com": {
 			"tlsCACerts": {
-				"path": "/fabric-path/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+				"path": "/workspace/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
 			},
-			"url": "grpcs://localhost:7051",
+			"url": "grpcs://peer0.org1.example.com:7051",
 			"grpcOptions": {
 				"ssl-target-name-override": "peer0.org1.example.com"
 			}
